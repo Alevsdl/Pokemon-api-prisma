@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model pokemon {
+  id     Int     @id @default(autoincrement())
+  numero String? @db.VarChar(45)
+  nombre String? @db.VarChar(45)
+}
